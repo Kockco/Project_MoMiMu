@@ -30,6 +30,14 @@ public class ImageControl : MonoBehaviour
     [SerializeField]
     private GameObject allPopObject;
 
+    [SerializeField]
+    private PlayerMovement momi;
+    [SerializeField]
+    private PlayerMovement momu;
+
+    [SerializeField]
+    private HingeJoint2D hinge;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +73,7 @@ public class ImageControl : MonoBehaviour
         }
 
         AllPopImage();
+        Sticky();
     }
 
     void AllPopImage()
@@ -77,5 +86,40 @@ public class ImageControl : MonoBehaviour
             allPopObject.SetActive(true);
             allPopImage.sprite = allPops[0];
         }
+
+        if (arrowTrigger[5].activeInHierarchy)
+        {
+            allPopObject.SetActive(false);
+            momiPopObject.SetActive(true);
+            momuPopObject.SetActive(true);
+            momiPopImage.sprite = momiPops[2];
+            momuPopImage.sprite = momuPops[2];
+        }
+
+        //if (!arrowTrigger[5].activeInHierarchy)
+        //{
+        //    allPopObject.SetActive(true);
+        //    momiPopObject.SetActive(false);
+        //    momuPopObject.SetActive(false);
+        //    allPopImage.sprite = allPops[1];
+        //}
+
+        if (!arrowTrigger[4].activeInHierarchy && (hinge.transform.rotation.z >= -135.0f))
+        {
+            allPopImage.sprite = allPops[1];
+        }
+    }
+
+    void Sticky()
+    {
+        if (momi.joint != null)
+            momiPopImage.sprite = momiPops[3];
+        else if (momi.isStickKeyDown)
+            momiPopImage.sprite = momiPops[2];
+
+        if (momu.joint != null)
+            momuPopImage.sprite = momuPops[3];
+        else if (momu.isStickKeyDown)
+            momuPopImage.sprite = momuPops[2];
     }
 }
