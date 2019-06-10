@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ImageControl : MonoBehaviour
 {
@@ -108,6 +109,16 @@ public class ImageControl : MonoBehaviour
         {
             allPopImage.sprite = allPops[1];
         }
+
+        if (!arrowTrigger[0].activeInHierarchy && !arrowTrigger[1].activeInHierarchy
+            && !arrowTrigger[2].activeInHierarchy && !arrowTrigger[3].activeInHierarchy
+            && !arrowTrigger[4].activeInHierarchy && !arrowTrigger[5].activeInHierarchy)
+            Invoke("GotoStage1", 3);
+    }
+
+    void GotoStage1()
+    {
+        SceneManager.LoadScene(2);
     }
 
     void Sticky()

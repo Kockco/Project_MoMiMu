@@ -16,11 +16,6 @@ public class UIFuncScript : MonoBehaviour
     [SerializeField]
     private Animation[] uiAnime;
 
-    public void OnHint()
-    {
-
-    }
-
     public void OnReStart()
     {
         SceneManager.LoadScene(3);
@@ -44,9 +39,14 @@ public class UIFuncScript : MonoBehaviour
         }
     }
 
+    public void GameQuit()
+    {
+        Application.Quit();
+    }
+
     public void BackScene()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void GameClearAnime()
@@ -55,5 +55,11 @@ public class UIFuncScript : MonoBehaviour
 
         for (int i = 0; i < uiAnime.Length; i++)
             uiAnime[i].Play();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            OnOffPause();
     }
 }
