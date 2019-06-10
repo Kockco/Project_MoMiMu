@@ -21,4 +21,8 @@ public class PipeStartBalpan : MonoBehaviour
             GetComponent<HingeJoint2D>().motor = b;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+    }
 }

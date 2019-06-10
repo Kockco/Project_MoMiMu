@@ -15,8 +15,8 @@ public class RineRander1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rope.SetPosition(0, GameObject.Find("Cube (4)").GetComponent<Transform>().position);
-        rope.SetPosition(1, GameObject.Find("Tesk3").GetComponent<Transform>().position);
-        rope.SetPosition(2, GameObject.Find("Floor10_Rope_Anchor").GetComponent<Transform>().position);
+        rope.SetPosition(0, GameObject.Find("Baguny (1)").GetComponent<Transform>().position);
+        rope.SetPosition(1, GameObject.Find("pin3").GetComponent<Transform>().position);
+        rope.SetPosition(2, GameObject.Find("Line3").GetComponent<Transform>().position);
     }
 }
