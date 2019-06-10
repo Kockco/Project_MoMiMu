@@ -29,7 +29,7 @@ public class TutoObjects : MonoBehaviour
             arrowNum++;
         }
 
-        if (col.gameObject == triggerObject && playerInstance.isStickKeyDown)
+        if (col.gameObject == triggerObject) // && playerInstance.isStickKeyDown)
         {
             if (triggerObject.transform.rotation.y >= 150.0f) // 초기 값 저장하고 그거에 대해 150값 이동해야함ㅇ
                 arrowNum++;
