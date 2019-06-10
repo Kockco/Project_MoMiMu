@@ -460,20 +460,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerNumber == 1)
         {
-            JumpKeyDown = Input.GetKeyDown(KeyCode.Period);
-            JumpKeyUp = Input.GetKeyUp(KeyCode.Period);
+            JumpKeyDown = Input.GetKeyDown(KeyCode.UpArrow);
+            JumpKeyUp = Input.GetKeyUp(KeyCode.UpArrow);
             StickKeyDown = Input.GetKeyDown(KeyCode.Slash);
             StickKeyUp = Input.GetKeyUp(KeyCode.Slash);
-            JumpCancelKey = Input.GetKeyDown(KeyCode.UpArrow);
+            JumpCancelKey = Input.GetKeyDown(KeyCode.DownArrow);
             DownKey = Input.GetKey(KeyCode.DownArrow);
         }
         else if (playerNumber == 2)
         {
-            JumpKeyDown = Input.GetKeyDown(KeyCode.LeftControl);
-            JumpKeyUp = Input.GetKeyUp(KeyCode.LeftControl);
+            JumpKeyDown = Input.GetKeyDown(KeyCode.R);
+            JumpKeyUp = Input.GetKeyUp(KeyCode.R);
             StickKeyDown = Input.GetKeyDown(KeyCode.LeftShift);
             StickKeyUp = Input.GetKeyUp(KeyCode.LeftShift);
-            JumpCancelKey = Input.GetKeyDown(KeyCode.R);
+            JumpCancelKey = Input.GetKeyDown(KeyCode.F);
             DownKey = Input.GetKey(KeyCode.F);
         }
         else

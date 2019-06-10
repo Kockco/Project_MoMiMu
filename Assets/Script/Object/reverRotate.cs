@@ -32,7 +32,7 @@ public class reverRotate : MonoBehaviour
             motorPower.motorSpeed -= 3000f * Time.deltaTime;
             hinge.motor = motorPower;
         }
-        if(transform.eulerAngles.z < 360 && transform.eulerAngles.z > 320)
+        if (transform.eulerAngles.z < 360 && transform.eulerAngles.z > 320)
         {
             movePos = (transform.eulerAngles.z - 360) * 0.0725f;
         }
@@ -49,7 +49,7 @@ public class reverRotate : MonoBehaviour
                 }
             }
         }
-        reverBasket.GetComponent<RelativeJoint2D>().linearOffset = new Vector2(basketPos.x, basketPos.y + movePos);
+        //reverBasket.GetComponent<RelativeJoint2D>().linearOffset = new Vector2(basketPos.x, basketPos.y + movePos);
         //올라갓다 내려갓다하는 물체
         //if (transform.rotation.z <= -0.17f)
         //{
