@@ -10,6 +10,8 @@ public class UIFuncScript : MonoBehaviour
 
     [SerializeField]
     private GameObject homeButton;
+    [SerializeField]
+    private GameObject PausePanel;
 
     [SerializeField]
     private Animation[] uiAnime;
@@ -26,18 +28,18 @@ public class UIFuncScript : MonoBehaviour
 
     public void OnOffPause()
     {
-        Debug.Log("OnOffPause");
-
         pauseState = !pauseState;
 
         if (pauseState)
         {
             homeButton.SetActive(false);
+            PausePanel.SetActive(true);
             Time.timeScale = 0;
         }
         else
         {
             homeButton.SetActive(true);
+            PausePanel.SetActive(false);
             Time.timeScale = 1;
         }
     }
