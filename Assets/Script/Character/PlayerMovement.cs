@@ -223,6 +223,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (JumpKeyDown == true)
         {
+            jump.Play();
             rb.AddForce(new Vector3(0, jumpPower, 0), ForceMode2D.Impulse);
 
             eState = CH_STATE.Collsion_False;
