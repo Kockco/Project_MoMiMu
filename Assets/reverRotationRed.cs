@@ -23,9 +23,17 @@ public class reverRotationRed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hinge.motor.motorSpeed < 10)
+        if (hinge.transform.eulerAngles.z < 330 )
         {
-            motorPower.motorSpeed += 10 * Time.deltaTime;
+            if (hinge.motor.motorSpeed < 10)
+            {
+                motorPower.motorSpeed += 10 * Time.deltaTime;
+                hinge.motor = motorPower;
+            }
+        }
+        else
+        {
+            motorPower.motorSpeed = 0;
             hinge.motor = motorPower;
         }
         //회전
