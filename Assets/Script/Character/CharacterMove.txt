@@ -1,0 +1,189 @@
+﻿//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+
+//public enum STATE { IDLE, SQUEEZE,STICK }
+//public class CharacterMove : MonoBehaviour
+//{
+//    public int playerNumber = 0;
+//    //찌그러져있는 시간,중력,스피드,왼-중-오 콜리더 상태, 리지드바디, 되돌릴 원래스케일, 이동값, hv, 상태
+//    public float squeezTime = 0;
+//    const float gravity = -9.8f;
+//    public float speed = 6;
+//    public Rigidbody rb;
+//    public bool jump = false;
+
+
+//    public Vector3 normalScale = new Vector3(1f, 1f, 1f);
+
+//    public GameObject obj;
+
+//    Vector3 movement;
+//    float h, v;
+
+//    public bool pumping = false;
+
+//    public STATE state;
+    
+//    //부모 오브젝트를 받아옴
+//    public Transform boxTr;
+//    // Start is called before the first frame update
+//    void Start()
+//    {
+//        state = STATE.IDLE;
+//        rb = GetComponent<Rigidbody>();
+//    }
+
+//    void Update()
+//    {
+//        //0.27초 후 찌그러진것 되돌리기
+//        //if (squeezTime < 0.5f && state == STATE.SQUEEZE)
+//        //{
+//        //    squeezTime += Time.deltaTime;
+//        //}
+//        //else if(squeezTime >= 0.5f && state == STATE.SQUEEZE)
+//        //{
+//        //    state = STATE.IDLE;
+//        //    speed = 6;
+//        //}
+
+//        //if (transform.localScale.y < normalScale.y && (state == STATE.IDLE || pumping == false) )
+//        //{
+//        //    transform.localScale += new Vector3(0, +1.5f, 0) * Time.deltaTime;
+//        //}
+//        //else if(transform.localScale.y >= normalScale.y)
+//        //{
+//        //    pumping = true;
+//        //}
+        
+        
+        
+//        PlayerMove();
+//        if(state != STATE.STICK)
+//        GravityUpdate();
+
+        
+//    }
+
+//    //중력을 받게하는 부분
+//    void GravityUpdate()
+//    {
+//        //점프 중 중력을 더 많이 받게함
+//        Vector3 velocity = rb.velocity;
+//        //Debug.Log(velocity);
+//        if (velocity.y < 10.0f)
+//        {
+//            velocity.y += gravity * 4f * Time.deltaTime;
+//        }
+//        else
+//        {
+//            velocity.y += gravity * Time.deltaTime;
+//        }
+//        rb.velocity = velocity;
+//    }
+
+//    //캐릭터 이동 관할
+//    void PlayerMove()
+//    {
+//        bool onJump, onScaleDown, onDash,onSlide;
+        
+//        if (playerNumber == 1)
+//        {
+//            h = Input.GetAxisRaw("Horizontal");
+//            onJump = Input.GetKeyDown(KeyCode.Keypad0);
+//            onScaleDown = Input.GetKeyDown(KeyCode.M);
+//            onDash = Input.GetKeyDown(KeyCode.Keypad2);
+//            onSlide = Input.GetKeyDown(KeyCode.Keypad1);
+//        }
+//        else
+//        {
+//            h = Input.GetAxisRaw("Horizontal2");
+//            onJump = Input.GetKeyDown(KeyCode.W);
+//            onScaleDown = Input.GetKeyDown(KeyCode.O);
+//            onDash = Input.GetKeyDown(KeyCode.P);
+//            onSlide = Input.GetKeyDown(KeyCode.T);
+//        }
+//        //점프
+//        if (onJump && jump == false /*&& state != STATE.SQUEEZE*/)
+//        {
+//            jump = true;
+//            rb.velocity = Vector3.zero;
+//            rb.AddForce(Vector3.up * 14f, ForceMode.Impulse);
+//        }
+//        //스케일 줄이기
+//        if (onScaleDown)
+//        {
+//            //프리팹 공중으로 랜덤생성
+//            Instantiate(obj, new Vector3(transform.position.x, transform.position.y + 3.2f,
+//                transform.position.z), Quaternion.identity);
+//            transform.localScale += new Vector3(-0.2f, -0.2f, -0.2f);
+//        }
+//        //대시
+//        if (onDash)
+//        {
+//            rb.AddForce(Vector3.right * 80f * Input.GetAxisRaw("Horizontal"), ForceMode.Impulse);
+//        }
+
+//        if (onSlide && h >0.1f)
+//        {
+//            pumping = false;
+//            transform.localScale = new Vector3(0.8f, 0, 0.8f);
+//            transform.position += new Vector3(1.0f, 0, 0);
+//        }
+//        else if (onSlide && h < -0.1f)
+//        {
+//            pumping = false;
+//            transform.localScale = new Vector3(0.8f, 0, 0.8f);
+//            transform.position += new Vector3(-1.0f, 0, 0);
+//        }
+//    }
+
+    
+//    // Update is called once per frame
+//    void FixedUpdate()
+//    {
+//        //rb.AddForce(new Vector3(1,0,0) * 2f * Input.GetAxisRaw("Horizontal"), ForceMode.Impulse);
+//        //붙지않았을때 기본 이동
+//        if (state != STATE.STICK)
+//        {
+//            movement.Set(h, 0f, 0f);
+//            movement = movement.normalized * speed * Time.deltaTime;
+//            rb.MovePosition(transform.position + movement);
+        
+//        }
+//        else
+//        {
+//            //boxTr.transform.rotation = Quaternion.Euler(0, 0, h);
+//            //boxTr.transform.Rotate(boxTr.transform.rotation.x, boxTr.transform.rotation.y, boxTr.transform.rotation.z * 50 * h * Time.deltaTime);
+
+//            if (h >= 0.1f || h <= -0.1f)
+//            {
+//                boxTr.transform.Rotate(0f, 0f, -h * 200 * Time.fixedDeltaTime);
+//                //로테이션 돌리기
+//                boxTr.transform.position = boxTr.transform.position + new Vector3(h * 10 * Time.fixedDeltaTime, 0f, 0f);
+//            }
+//        }
+//    }
+
+//    private void OnCollisionEnter(Collision collision)
+//    {
+//        jump = false;
+//    }
+
+//    private void OnCollisionStay(Collision collision)
+//    {
+//        if (collision.gameObject.tag == "Box" && Input.GetKeyDown(KeyCode.Keypad3))
+//        {
+//            boxTr = collision.transform;
+//            //collision.transform.parent = transform;
+//            transform.parent = collision.transform;
+//            Physics.IgnoreCollision(GetComponent<Collider>(), transform.parent.GetComponent<Collider>(), true);
+//            //Physics.IgnoreCollision(GetComponent<Collider>(), transform.parent.GetComponent<Collider>(), false);
+//            state = STATE.STICK;
+//            //rb.velocity = Vector3.zero;
+//            //rb.MovePosition(transform.position);
+//            rb.constraints = RigidbodyConstraints.FreezeAll;
+//            //rb.isKinematic = true;
+//        }
+//    }
+//}
