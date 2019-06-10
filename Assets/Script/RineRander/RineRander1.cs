@@ -17,6 +17,6 @@ public class RineRander1 : MonoBehaviour
     {
         rope.SetPosition(0, GameObject.Find("Baguny (1)").GetComponent<Transform>().position);
         rope.SetPosition(1, GameObject.Find("pin3").GetComponent<Transform>().position);
-        rope.SetPosition(2, GameObject.Find("Line3").GetComponent<Transform>().position);
+        rope.SetPosition(2, GameObject.Find("line3").GetComponent<Transform>().position);
     }
 }

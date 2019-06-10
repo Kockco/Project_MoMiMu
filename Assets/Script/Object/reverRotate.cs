@@ -21,7 +21,7 @@ public class reverRotate : MonoBehaviour
         hinge = GetComponent<HingeJoint2D>();
         motorPower = new JointMotor2D();
         motorPower.maxMotorTorque = 10000;
-        basketPos = new Vector2(0.15f, 2.4f);
+        basketPos = new Vector2(0.24f, 3.76f);
     }
 
     // Update is called once per frame
@@ -49,21 +49,21 @@ public class reverRotate : MonoBehaviour
                 }
             }
         }
-        //reverBasket.GetComponent<RelativeJoint2D>().linearOffset = new Vector2(basketPos.x, basketPos.y + movePos);
+        reverBasket.GetComponent<RelativeJoint2D>().linearOffset = new Vector2(0.24f, basketPos.y + movePos);
         //올라갓다 내려갓다하는 물체
         //if (transform.rotation.z <= -0.17f)
         //{
 
-        //    reverBasket.GetComponent<RelativeJoint2D>().linearOffset = new Vector2(basketPos.x,basketPos.y + movePos);
-        //    if (basketPos.y > -0.66f)
+        //    reverBasket.GetComponent<RelativeJoint2D>().linearOffset = new Vector2(-0.24f, basketPos.y + movePos);
+        //    if (basketPos.y > 1f)
         //    {
         //        basketPos += speed * Time.deltaTime;
         //        reverBasket.GetComponent<RelativeJoint2D>().linearOffset = basketPos;
         //    }
         //}
-        //else if(transform.rotation.z > -0.17f)
+        //else if (transform.rotation.z > -0.17f)
         //{
-        //    if (basketPos.y < 2.4f)
+        //    if (basketPos.y < 3.76f)
         //    {
         //        basketPos -= speed * Time.deltaTime;
         //        reverBasket.GetComponent<RelativeJoint2D>().linearOffset = basketPos;
