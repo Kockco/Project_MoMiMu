@@ -53,7 +53,6 @@ public class ImageControl : MonoBehaviour
         else if (arrowTrigger[1].activeInHierarchy == true)
         {
             momiPopImage.sprite = momiPops[1];
-            AllPopImage();
         }
 
         if (arrowTrigger[2].activeInHierarchy == true)
@@ -63,13 +62,15 @@ public class ImageControl : MonoBehaviour
         else if (arrowTrigger[3].activeInHierarchy == true)
         {
             momuPopImage.sprite = momuPops[1];
-            AllPopImage();
         }
+
+        AllPopImage();
     }
 
     void AllPopImage()
     {
-        if (!arrowTrigger[1].activeInHierarchy && !arrowTrigger[3].activeInHierarchy)
+        if (!arrowTrigger[1].activeInHierarchy && !arrowTrigger[3].activeInHierarchy
+            && !arrowTrigger[0].activeInHierarchy && !arrowTrigger[2].activeInHierarchy)
         {
             momiPopObject.SetActive(false);
             momuPopObject.SetActive(false);

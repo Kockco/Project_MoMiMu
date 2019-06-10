@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: d46fd1c20f9b66c4dbd621c5b63b2a8c, type: 2}
+  m_Material: {fileID: 2100000, guid: e053a903d13b4ca4bb195f50c74a45ed, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -394,7 +394,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4931b04cd11eb604f9ee02eecdd2005b, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -0.5
-  mat: {fileID: 2100000, guid: d46fd1c20f9b66c4dbd621c5b63b2a8c, type: 2}
+  mat: {fileID: 2100000, guid: e053a903d13b4ca4bb195f50c74a45ed, type: 2}
 --- !u!1 &503545057
 GameObject:
   m_ObjectHideFlags: 0
