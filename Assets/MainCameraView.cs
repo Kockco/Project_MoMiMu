@@ -14,15 +14,15 @@ public class MainCameraView : MonoBehaviour
     {
         posX = (MoMiMu[0].transform.position.x + MoMiMu[1].transform.position.x) /2;
 
-        this.transform.position = new Vector3((MoMiMu[0].transform.position.x + MoMiMu[1].transform.position.x) / 2, -0.26f, -10);
+        this.transform.position = new Vector3((MoMiMu[0].transform.position.x + MoMiMu[1].transform.position.x) / 2, 0.61f, -10);
         DontOut();
     }
 
     void DontOut()
     {
         if (this.transform.position.x <= -4.9f)
-            this.transform.position = new Vector3(-4.9f, -0.26f, -10);
+            this.transform.position = new Vector3(-4.9f, 0.61f, -10);
         else if (this.transform.position.x >= 4.9f)
-            this.transform.position = new Vector3(4.9f, -0.26f, -10);
+            this.transform.position = new Vector3(4.9f, 0.61f, -10);
     }
 }
