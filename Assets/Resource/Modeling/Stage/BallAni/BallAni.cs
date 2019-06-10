@@ -17,7 +17,7 @@ public class BallAni : MonoBehaviour
         endTime += Time.deltaTime;
         if (endTime > 2.7f)
         {
-            transform.position = new Vector2(-6.681f, -3.562f);
+            transform.position = new Vector2(-6.11f, -4.43f);
             transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             GetComponent<Animator>().enabled = false;
             GetComponent<CircleCollider2D>().enabled = true;

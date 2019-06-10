@@ -10,9 +10,10 @@ public class CardObject : MonoBehaviour
         if(collision.gameObject.name == "Ball1")
         {
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 7; i++)
             {
                card[i].gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+                card[i].layer = 11;
             }
         }
     }

@@ -5,10 +5,11 @@ using UnityEngine;
 public class BallAniScript : MonoBehaviour
 {
     public GameObject ball;
+    public GameObject rotateObject;
     public Animator ani;
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Update()
     {
-        if (collision.gameObject.name == ball.name)
+        if(rotateObject.transform.rotation.z > 0.175f && ball.GetComponent<MovingObject>().pipeBall == false)
         {
             if (!ball.GetComponent<BallAni>())
             {

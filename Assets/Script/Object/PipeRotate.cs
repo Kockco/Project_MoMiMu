@@ -46,11 +46,11 @@ public class PipeRotate : MonoBehaviour
         {
             start = true;
         }
-        if (transform.rotation.z < 0.99f && collision.gameObject.name == "Ball1")
-        {
-            if(collision.gameObject.GetComponent<MovingObject>().pipeBall == false)
-             start2 = true;
-        }
+        //if (transform.rotation.z < 0.99f && collision.gameObject.name == "Ball1")
+        //{
+        //    if(collision.gameObject.GetComponent<MovingObject>().pipeBall == false)
+        //     start2 = true;
+        //}
     }
 }
 
