@@ -430,7 +430,7 @@ public class PlayerMovement : MonoBehaviour
 
             //붙은 곳에대해 회전
             transform.up = collision.contacts[0].normal;
-            transform.rotation = Quaternion.Euler(new Vector3(5, 0, transform.rotation.eulerAngles.z));
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, transform.rotation.eulerAngles.z));
         }
         
         switch (eState)
