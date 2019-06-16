@@ -10,6 +10,7 @@ TagManager:
   - Rever
   - Ground
   - SmallObject
+  - Basket
   layers:
   - Default
   - TransparentFX

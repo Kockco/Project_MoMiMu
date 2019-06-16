@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public FixedJoint2D joint;
     Vector2 startPos;
     public float h, v;
+    public bool jumpCol; // 점프중에 부딪혓는지?
 
     //오디오
     public AudioSource jump;
@@ -193,12 +194,13 @@ public class PlayerMovement : MonoBehaviour
             h = Input.GetAxisRaw("Horizontal2");
         }
 
+        
         //이동속도를 계속 초기화 시켜줌으로써 같은 이동속도를 내어줌!
         movement = rb.velocity;
 
         movement.x = h * jumpSpeed;
-
-        rb.velocity = movement;
+        if(jumpCol == false)
+            rb.velocity = movement;
     }
 
     //중력을 받게하는 부분 - velocity 강제 적용(y만)
@@ -386,6 +388,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+         jumpCol = true;
         switch (eState)
         {
             case CH_STATE.Stand:
@@ -456,6 +459,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        jumpCol = false;
+    }
     //키셋팅
     void KeyDown()
     {

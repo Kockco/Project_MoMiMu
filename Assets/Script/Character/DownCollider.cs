@@ -18,16 +18,12 @@ public class DownCollider : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
-        {
+        //if (collision.tag == "Ground" || collision.tag =="Basket")
             onCol = true;
-        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
-        {
+        //if (collision.tag == "Ground" || collision.tag == "Basket")
             onCol = false;
-        }
     }
 }
