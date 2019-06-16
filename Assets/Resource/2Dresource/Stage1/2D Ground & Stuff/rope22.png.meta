@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 308025de770d1b64b8402d60a794987d
+guid: 8f6c574d4a8c9cc4499e83503cff5cd9
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: PinG_0
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -83,31 +82,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: PinG_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 19
-        width: 44
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b2d4438a462dee4c9cd47235bb7ca23
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c4d5d528db2f3b34298e075b17de1533
+    spriteID: 
     vertices: []
     indices: 
     edges: []
