@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - SmallObject
   - Basket
+  - pipe
   layers:
   - Default
   - TransparentFX
