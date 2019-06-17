@@ -23,19 +23,25 @@ public class reverRotationRed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hinge.transform.eulerAngles.z < 330 )
+        //if (hinge.transform.eulerAngles.z < 330 )
+        //{
+        //    if (hinge.motor.motorSpeed < 10)
+        //    {
+        //        motorPower.motorSpeed += 10 * Time.deltaTime;
+        //        hinge.motor = motorPower;
+        //    }
+        //}
+        //else
+        //{
+        //    motorPower.motorSpeed = 0;
+        //    hinge.motor = motorPower;
+        //
+        if (motorPower.motorSpeed < 10)
         {
-            if (hinge.motor.motorSpeed < 10)
-            {
-                motorPower.motorSpeed += 10 * Time.deltaTime;
-                hinge.motor = motorPower;
-            }
-        }
-        else
-        {
-            motorPower.motorSpeed = 0;
+            motorPower.motorSpeed = 3000f * Time.deltaTime;
             hinge.motor = motorPower;
         }
+
         //회전
         for (int i = 0; i <= 1; i++)
         {
@@ -43,9 +49,11 @@ public class reverRotationRed : MonoBehaviour
             {
                 if (player[i].GetComponent<PlayerMovement>().joint.connectedBody == GetComponent<Rigidbody2D>())
                 {
-
-                    motorPower.motorSpeed = -10;
-                    hinge.motor = motorPower;
+                    if (player[i].GetComponent<PlayerMovement>().cur_throw_force_value.y != 0)
+                    {
+                        motorPower.motorSpeed = player[i].GetComponent<PlayerMovement>().cur_throw_force_value.y * 3;
+                        hinge.motor = motorPower;
+                    }
                 }
             }
         }
