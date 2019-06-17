@@ -462,13 +462,13 @@ MonoBehaviour:
   bounce_skip_velocity: {x: 1, y: 10}
   ch_before_velocity: {x: 0, y: 0}
   isStickKeyDown: 0
-  throw_force_value: {x: 5, y: 0}
+  throw_force_value: {x: 1, y: 10}
   cur_throw_force_value: {x: 0, y: 0}
   throw_torque_value: {x: 0, y: 0}
   cur_throw_torque_value: {x: 0, y: 0}
   throw_force_action_time: 0
   throw_force_decrease_time: 0.2
-  max_throw_force_value: 20
+  max_throw_force_value: 10
   max_throw_torque_value: 0
   collisionFalseTime: 0
   eState: 0
@@ -3031,6 +3031,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a352cd04844eeab4fa60d1cb2d87e4d9, type: 3}
   - {fileID: 21300000, guid: 9234e8a78c3f8b6429608de40135bd18, type: 3}
   - {fileID: 21300000, guid: fcdc89f9dfa06ea43912132ace78bc57, type: 3}
+  - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   vecZ: 0
 --- !u!1 &2049796730
 GameObject:

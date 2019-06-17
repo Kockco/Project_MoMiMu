@@ -38,6 +38,8 @@ public class ImageControl : MonoBehaviour
 
     [SerializeField]
     private HingeJoint2D hinge;
+    [SerializeField]
+    private TutoObjects[] tutoInstance;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +47,7 @@ public class ImageControl : MonoBehaviour
         allPopObject.SetActive(false);
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (arrowTrigger[0].activeInHierarchy == true)
         {
@@ -66,7 +68,6 @@ public class ImageControl : MonoBehaviour
         }
 
         AllPopImage();
-        Sticky();
     }
 
     void AllPopImage()
@@ -85,8 +86,11 @@ public class ImageControl : MonoBehaviour
             allPopObject.SetActive(false);
             momiPopObject.SetActive(true);
             momuPopObject.SetActive(true);
-            momiPopImage.sprite = momiPops[2];
-            momuPopImage.sprite = momuPops[2];
+
+            if (!tutoInstance[0].onJoint)
+                momiPopImage.sprite = momiPops[2];
+            if (!tutoInstance[1].onJoint)
+                momuPopImage.sprite = momuPops[2];
         }
 
         //if (!arrowTrigger[5].activeInHierarchy)
@@ -113,16 +117,22 @@ public class ImageControl : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    void Sticky()
+    public void Sticky()
     {
-        if (momi.joint != null)
-            momiPopImage.sprite = momiPops[3];
-        else if (momi.isStickKeyDown)
-            momiPopImage.sprite = momiPops[2];
+        if (tutoInstance[0].onJoint)
+        {
+            if (momi.joint != null)
+                momiPopImage.sprite = momiPops[3];
+            else if (!momi.isStickKeyDown)
+                momiPopImage.sprite = momiPops[2];
+        }
 
-        if (momu.joint != null)
-            momuPopImage.sprite = momuPops[3];
-        else if (momu.isStickKeyDown)
-            momuPopImage.sprite = momuPops[2];
+        if (tutoInstance[1].onJoint)
+        {
+            if (momu.joint != null)
+                momuPopImage.sprite = momuPops[3];
+            else if (!momu.isStickKeyDown)
+                momuPopImage.sprite = momuPops[2];
+        }
     }
 }

@@ -62,7 +62,7 @@ public class UIFuncScript : MonoBehaviour
 
     public void BackScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void GameClearAnime()

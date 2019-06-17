@@ -27,7 +27,7 @@ public class TutoRever : MonoBehaviour
     {
         if (motorPower.motorSpeed > -10)
         {
-            motorPower.motorSpeed -= 3000f * Time.deltaTime;
+            motorPower.motorSpeed -= 1000 * Time.deltaTime;
             hinge.motor = motorPower;
         }
         if (transform.eulerAngles.z < 360 && transform.eulerAngles.z > 320)
