@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8612219745869404da446fb0c05b8364
+guid: 8c3f79053c62a294990fc7a8819e8f58
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -171,7 +171,7 @@ ModelImporter:
       name: Real_Falling
       takeName: Real_Falling
       firstFrame: 0
-      lastFrame: 80
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

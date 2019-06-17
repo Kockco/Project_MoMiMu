@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StickArrow : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class StickArrow : MonoBehaviour
 
     [SerializeField]
     private SpriteRenderer[] arrowZone;
+    [SerializeField]
+    private Sprite[] dots;
 
     [SerializeField]
     private float vecZ;
@@ -17,6 +20,7 @@ public class StickArrow : MonoBehaviour
     void Update()
     {
         SetVectorZ();
+        CreateDot();
         this.transform.rotation = Quaternion.Euler(0, 0, vecZ);
     }
 
@@ -40,17 +44,18 @@ public class StickArrow : MonoBehaviour
         switch(Mathf.Abs(momimu.cur_throw_force_value.x))
         {
             case 1:
-            case 2:
+                arrowZone[0].sprite = dots[5];
                 break;
+            case 2:
             case 3:
             case 4:
             case 5:
-                break;
             case 7:
             case 8:
             case 9:
-                break;
             case 10:
+                for (int i = 0; i < arrowZone.Length; i++)
+                    arrowZone[i].sprite = null;
                 break;
             default:
                 break;
