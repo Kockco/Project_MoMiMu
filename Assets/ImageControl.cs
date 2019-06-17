@@ -42,14 +42,6 @@ public class ImageControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        momiPops = GetComponent<Sprite[]>();
-        momuPops = GetComponent<Sprite[]>();
-        allPops = GetComponent<Sprite[]>();
-
-        //momiPopObject = GameObject.Find("MoMiPop");
-        //momuPopObject = GameObject.Find("MoMuPop");
-        //allPopObject = GameObject.Find("AllPop");
-
         allPopObject.SetActive(false);
     }
 

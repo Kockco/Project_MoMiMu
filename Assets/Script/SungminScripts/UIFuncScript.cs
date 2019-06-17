@@ -12,9 +12,25 @@ public class UIFuncScript : MonoBehaviour
     private GameObject homeButton;
     [SerializeField]
     private GameObject PausePanel;
+    [SerializeField]
+    private GameObject hintPanel;
 
     [SerializeField]
     private Animation[] uiAnime;
+
+    public void OnHint()
+    {
+        if (hintPanel.activeInHierarchy)
+        {
+            hintPanel.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            hintPanel.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
 
     public void OnReStart()
     {
@@ -51,8 +67,6 @@ public class UIFuncScript : MonoBehaviour
 
     public void GameClearAnime()
     {
-        Debug.Log("OnOffPause");
-
         for (int i = 0; i < uiAnime.Length; i++)
             uiAnime[i].Play();
     }
