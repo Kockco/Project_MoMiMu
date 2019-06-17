@@ -8,15 +8,10 @@ public class StickArrow : MonoBehaviour
     private PlayerMovement momimu;
 
     [SerializeField]
-    private char[] stack;
+    private SpriteRenderer[] arrowZone;
 
     [SerializeField]
     private float vecZ;
-
-    void Start()
-    {
-        stack = new char[4];
-    }
 
     // Update is called once per frame
     void Update()
