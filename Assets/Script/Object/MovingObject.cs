@@ -24,7 +24,7 @@ public class MovingObject : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0;
         }
-        if(collision.transform.tag == "pipe" && pipeBall == false)
+        if(gameObject.name == "Ball1" && collision.transform.tag == "pipe" && pipeBall == false)
         {
             transform.position = startPos;
             rb.velocity = Vector2.zero;
