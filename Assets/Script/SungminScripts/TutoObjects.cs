@@ -14,7 +14,7 @@ public class TutoObjects : MonoBehaviour
     private PlayerMovement playerInstance;
     [SerializeField]
     private ImageControl pops;
-    
+
     public bool onJoint = false;
 
     void Start()
@@ -29,7 +29,7 @@ public class TutoObjects : MonoBehaviour
     {
         if (col.gameObject.name == "Arrow (" + arrowNum + ")")
         {
-            arrow[arrowNum - 1].SetActive(false); // 화살표 오브젝트 풀링을 쓸지
+            arrow[arrowNum - 1].SetActive(false);
             arrow[arrowNum++].SetActive(true);
         }
 

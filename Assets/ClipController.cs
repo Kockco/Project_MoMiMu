@@ -15,9 +15,6 @@ public class ClipController : MonoBehaviour
 
     void Update()
     {
-        // clips[3].CutHinge();
-        // clips[3].LayerControl();
-
         if (!arrows[0].activeInHierarchy && !arrows[2].activeInHierarchy)
         {
             clips[0].CutHinge();
