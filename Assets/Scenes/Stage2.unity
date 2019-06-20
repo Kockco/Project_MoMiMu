@@ -4185,7 +4185,7 @@ MonoBehaviour:
   throw_torque_value: {x: 0, y: 0}
   cur_throw_torque_value: {x: 0, y: 0}
   throw_force_action_time: 0
-  throw_force_decrease_time: 1
+  throw_force_decrease_time: 0.5
   max_throw_force_value: 10
   max_throw_torque_value: 0
   collisionFalseTime: 0
@@ -7201,7 +7201,7 @@ MonoBehaviour:
   throw_torque_value: {x: 0, y: 0}
   cur_throw_torque_value: {x: 0, y: 0}
   throw_force_action_time: 0
-  throw_force_decrease_time: 1
+  throw_force_decrease_time: 0.5
   max_throw_force_value: 10
   max_throw_torque_value: 0
   collisionFalseTime: 0
@@ -18695,7 +18695,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 3242738304581698612}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 58fd3f04c9f5b384d98cda6c2a5ed619, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -18749,7 +18749,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -18951,7 +18951,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3242738305576395849}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c07a30c770df99947abcc8df0c53b84b, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -19136,8 +19136,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -10
-    m_UpperAngle: 10
+    m_LowerAngle: -20
+    m_UpperAngle: 20
 --- !u!50 &3242738305743810671
 Rigidbody2D:
   serializedVersion: 4
